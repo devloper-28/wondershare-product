@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/wondershare-product/static/css/main.6eac5b1c.css",
+    "main.js": "/wondershare-product/static/js/main.d3a63e3e.js",
+    "static/js/488.2ba6f60f.chunk.js": "/wondershare-product/static/js/488.2ba6f60f.chunk.js",
+    "static/media/2.png": "/wondershare-product/static/media/2.a218483759b108d46cf5.png",
+    "static/media/3.png": "/wondershare-product/static/media/3.ad1d731250ef50fc2d01.png",
+    "static/media/4.png": "/wondershare-product/static/media/4.c031f3444a4ddd73aac2.png",
+    "index.html": "/wondershare-product/index.html",
+    "main.6eac5b1c.css.map": "/wondershare-product/static/css/main.6eac5b1c.css.map",
+    "main.d3a63e3e.js.map": "/wondershare-product/static/js/main.d3a63e3e.js.map",
+    "488.2ba6f60f.chunk.js.map": "/wondershare-product/static/js/488.2ba6f60f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6eac5b1c.css",
+    "static/js/main.d3a63e3e.js"
+  ]
+}
