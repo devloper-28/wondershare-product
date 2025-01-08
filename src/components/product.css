@@ -1,0 +1,30 @@
+/* .imagewrap img{
+    height: 500px !important;
+  } */
+.buttonpay button {
+  max-width: 200px;
+  width: 100%;
+}
+.buttonpay {
+  text-align: center !important;
+  padding: 0px !important;
+  border-radius: 8px !important;
+  max-width: 500px !important;
+  margin: 20px auto 10px !important;
+  display: flex !important;
+  justify-content: space-around !important;
+  width: 90% !important;
+}
+@media (max-width: 550px) {
+  .buttonpay button {
+    max-width: 100%;
+    margin-top: 15px;
+  }
+  .buttonpay {
+    width: 100% !important;
+    flex-wrap: wrap;
+  }
+  ul {
+    padding-left: 21px;
+  }
+}
