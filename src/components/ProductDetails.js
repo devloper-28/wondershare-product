@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Image1, Image2, Image3 } from "../assets/images";
+import { Image1, Image2, Image3, Image4 } from "../assets/images";
 import "./product.css";
 import PaymentButton from "./PaymentButton";
 const ProductDetails = ({ product }) => {
@@ -72,12 +72,14 @@ const ProductDetails = ({ product }) => {
       </div>
 
       {/* Product Details */}
-      <h2 style={styles.productName}>{product.name}</h2>
+      {/* <h2 style={styles.productName}>{product.name}</h2> */}
+      <img src={Image4} alt="real-site-img" className="img-classa" />
+      <h2 style={styles.productName} className="costtitle">Cost from official site!!</h2>
+      <h3 style={styles.productPrice}>Buy from us at Just ₹{product.price} for lifetime</h3>
       <PaymentButton product={product} />
-      <h3 style={styles.productPrice}>Buy at Just ₹{product.price}</h3>
 
       <div style={styles.productDescription}>
-        <h3>Features</h3>
+        <h3>What we offer?</h3>
         <ul style={styles.featureList}>
           <li style={{ textAlign: "left" }}>
             Filmora 13 with cutting-edge AI technology.
