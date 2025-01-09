@@ -15,7 +15,7 @@ const PaymentButton = ({ product }) => {
         if (response && response.razorpay_payment_id) {
           alert(
             "Payment Successful! Transaction ID: " +
-              response.razorpay_payment_id
+            response.razorpay_payment_id
           );
 
           // Set payment successful to true
@@ -60,11 +60,12 @@ const PaymentButton = ({ product }) => {
       </div>
       {paymentSuccessful && (
         <div style={styles.successMessageContainer}>
+          <h2 >🎉 Congratulations! 🎉</h2>
           <p style={styles.warningText}>
             ⚠{" "}
             <span style={styles.warningNote}>
               Make sure to click the "Download Now" button to download your
-              product. If you refresh this page, you may lose your product. So,
+              product. If you ⚠️Refresh this page, you may lose⚠️ your product. So,
               please save it somewhere safe.
             </span>
           </p>
@@ -102,13 +103,21 @@ const styles = {
   paymentButtonHover: {
     backgroundColor: "#0056b3",
   },
+  // successMessageContainer: {
+  //   marginTop: "30px",
+  //   backgroundColor: "#f8f9fa",
+  //   padding: "20px",
+  //   borderRadius: "8px",
+  //   border: "1px solid #dee2e6",
+  //   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  // },
   successMessageContainer: {
-    marginTop: "30px",
-    backgroundColor: "#f8f9fa",
+    border: "5px solid",
+    borderImage: "linear-gradient(90deg, #ff007f, #00ff7f, #007fff) 1", // Gradient border
+    borderRadius: "15px", // Rounded corners
     padding: "20px",
-    borderRadius: "8px",
-    border: "1px solid #dee2e6",
-    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+    textAlign: "center",
+    animation: "borderAnimation 5s linear infinite", // Animation for gradient effect
   },
   warningText: {
     fontSize: "18px",
