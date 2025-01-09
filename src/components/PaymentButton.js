@@ -1,38 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./product.css";
+import { FaWhatsapp, FaYoutube } from "react-icons/fa";
 
 const PaymentButton = ({ product }) => {
   const [paymentSuccessful, setPaymentSuccessful] = useState(false);
 
+  useEffect(() => {
+    // Check if Razorpay redirects back to this page with success query parameters
+    const queryParams = new URLSearchParams(window.location.search);
+    if (queryParams.has("razorpay_payment_id")) {
+      // Payment successful
+      setPaymentSuccessful(true);
+      alert("Payment Successful! You can now download your product.");
+    } else if (queryParams.has("error")) {
+      // Payment failed or canceled
+      alert("Payment failed or canceled. Please try again.");
+    }
+  }, []);
+
   const handlePayment = () => {
-    const options = {
-      key: "rzp_test_6SHyjY13eIV0xR", // Your Razorpay Test API Key
-      amount: product.price * 100, // Convert to paise (price in INR)
-      currency: "INR",
-      name: "Product Purchase",
-      description: product.name,
-      handler: function (response) {
-        if (response && response.razorpay_payment_id) {
-          alert(
-            "Payment Successful! Transaction ID: " +
-            response.razorpay_payment_id
-          );
-
-          // Set payment successful to true
-          setPaymentSuccessful(true);
-        } else {
-          alert("Payment failed or was canceled.");
-        }
-      },
-      prefill: {
-        name: "John Doe",
-        email: "john.doe@example.com",
-        contact: "9999999999",
-      },
-    };
-
-    const rzp = new window.Razorpay(options);
-    rzp.open();
+    // Redirect to Razorpay payment link in the same tab
+    window.location.href =
+      "https://razorpay.me/@wertrends?amount=CeQsAR0nTC%2BND0Le6liYzQ%3D%3D";
   };
 
   const handleDownload = () => {
@@ -58,9 +47,63 @@ const PaymentButton = ({ product }) => {
           Contact Admin
         </button>
       </div>
+
+
+      <div style={styles.container} className="buttonpay">
+        <button
+          style={{
+            ...styles.paymentButton,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#25D366", // WhatsApp green color
+            color: "white",
+            border: "none",
+            padding: "10px 20px",
+            borderRadius: "5px",
+            fontSize: "16px",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            window.open(
+              "https://wa.me/918154994406?text=Hello%20Admin,%20Here%20is%20my%20product%20id.",
+              "_blank"
+            );
+          }}
+
+        >
+          <FaWhatsapp size={20} style={{ marginRight: "8px" }} /> {/* WhatsApp Icon */}
+          Share Product Id
+        </button>
+        <button
+          style={{
+            ...styles.paymentButton,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#FF0000", // YouTube red color
+            color: "white",
+            border: "none",
+            padding: "10px 20px",
+            borderRadius: "5px",
+            fontSize: "16px",
+            cursor: "pointer",
+          }}
+          onClick={() => {
+            window.open(
+              "https://www.youtube.com/watch?v=YOUR_VIDEO_ID", // Replace with your YouTube video link
+              "_blank"
+            );
+          }}
+        >
+          <FaYoutube size={20} style={{ marginRight: "8px" }} /> {/* YouTube Icon */}
+          How to Use
+        </button>
+      </div>
+
       {paymentSuccessful && (
         <div style={styles.successMessageContainer}>
-          <h2 >🎉 Congratulations! 🎉</h2>
+          <h2>🎉 Congratulations! 🎉</h2>
           <p style={styles.warningText}>
             ⚠{" "}
             <span style={styles.warningNote}>
@@ -83,9 +126,7 @@ const styles = {
   container: {
     textAlign: "center",
     padding: "0px",
-    // backgroundColor: "#f7f7f7",
     borderRadius: "8px",
-    // boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     maxWidth: "500px",
     margin: "20px auto 10px",
   },
@@ -100,29 +141,18 @@ const styles = {
     boxShadow: "0 4px 6px rgba(0, 123, 255, 0.2)",
     transition: "background-color 0.3s ease",
   },
-  paymentButtonHover: {
-    backgroundColor: "#0056b3",
-  },
-  // successMessageContainer: {
-  //   marginTop: "30px",
-  //   backgroundColor: "#f8f9fa",
-  //   padding: "20px",
-  //   borderRadius: "8px",
-  //   border: "1px solid #dee2e6",
-  //   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-  // },
   successMessageContainer: {
     border: "5px solid",
-    borderImage: "linear-gradient(90deg, #ff007f, #00ff7f, #007fff) 1", // Gradient border
-    borderRadius: "15px", // Rounded corners
+    borderImage: "linear-gradient(90deg, #ff007f, #00ff7f, #007fff) 1",
+    borderRadius: "15px",
     padding: "20px",
     textAlign: "center",
-    animation: "borderAnimation 5s linear infinite", // Animation for gradient effect
+    animation: "borderAnimation 5s linear infinite",
   },
   warningText: {
     fontSize: "18px",
     fontWeight: "bold",
-    color: "#ff9800", // Orange color for warning
+    color: "#ff9800",
     marginBottom: "20px",
   },
   warningNote: {
@@ -132,16 +162,13 @@ const styles = {
   downloadButton: {
     padding: "12px 30px",
     fontSize: "18px",
-    backgroundColor: "#28a745", // Green button for success
+    backgroundColor: "#28a745",
     color: "#fff",
     border: "none",
     borderRadius: "5px",
     cursor: "pointer",
     boxShadow: "0 4px 6px rgba(40, 167, 69, 0.2)",
     transition: "background-color 0.3s ease",
-  },
-  downloadButtonHover: {
-    backgroundColor: "#218838",
   },
 };
 
