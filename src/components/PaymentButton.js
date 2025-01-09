@@ -21,7 +21,7 @@ const PaymentButton = ({ product }) => {
   const handlePayment = () => {
     // Redirect to Razorpay payment link in the same tab
     window.location.href =
-      "https://razorpay.me/@wertrends?amount=CeQsAR0nTC%2BND0Le6liYzQ%3D%3D";
+      "https://razorpay.me/@wertrends?amount=AbrAZZu%2Ffs1C7OoCxDm7hw%3D%3D";
   };
 
   const handleDownload = () => {
