@@ -132,6 +132,7 @@ const styles = {
     height: "auto",
     borderRadius: "10px",
   },
+  
   sliderButtonLeft: {
     position: "absolute",
     top: "50%",
