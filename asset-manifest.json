@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wondershare-product/static/css/main.46cd8e40.css",
-    "main.js": "/wondershare-product/static/js/main.3976550a.js",
+    "main.js": "/wondershare-product/static/js/main.f4beb9bb.js",
     "static/js/488.2ba6f60f.chunk.js": "/wondershare-product/static/js/488.2ba6f60f.chunk.js",
     "static/media/2.png": "/wondershare-product/static/media/2.a218483759b108d46cf5.png",
     "static/media/3.png": "/wondershare-product/static/media/3.ad1d731250ef50fc2d01.png",
@@ -9,11 +9,11 @@
     "static/media/image.png": "/wondershare-product/static/media/image.fd5d146dc82b5d0076f1.png",
     "index.html": "/wondershare-product/index.html",
     "main.46cd8e40.css.map": "/wondershare-product/static/css/main.46cd8e40.css.map",
-    "main.3976550a.js.map": "/wondershare-product/static/js/main.3976550a.js.map",
+    "main.f4beb9bb.js.map": "/wondershare-product/static/js/main.f4beb9bb.js.map",
     "488.2ba6f60f.chunk.js.map": "/wondershare-product/static/js/488.2ba6f60f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.46cd8e40.css",
-    "static/js/main.3976550a.js"
+    "static/js/main.f4beb9bb.js"
   ]
 }
